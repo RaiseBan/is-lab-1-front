@@ -1,0 +1,160 @@
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    width: 80%;
+    max-width: 800px;
+    overflow-y: auto;
+    max-height: 90vh;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+    overflow-y: auto;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.modalClose {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.modalClose:hover {
+    color: #00ccff;
+}
+
+form {
+    display: grid;
+
+    gap: 10px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-family: 'CPMono', sans-serif;
+}
+
+input:focus {
+    border-color: #00ccff;
+}
+
+
+.createbutton {
+
+    padding: 10px 20px;
+    max-width: 100vh;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: 16px;
+    grid-column: span 2;
+    margin-top: 20px;
+}
+
+.createbutton:hover {
+    color: #00ccff;
+    background: unset;
+}
+
+
+.openModalButton {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 0;
+}
+
+.openModalButton:hover {
+    color: #00ccff;
+}
+
+
+.modal {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+
+
+select {
+    width: 90%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #00ccff;
+}
+
+
+.errorText {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+.errorMessages {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: 1px solid #ff4d4d;
+    border-radius: 4px;
+}
+

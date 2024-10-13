@@ -1,0 +1,134 @@
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.modalContent {
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+.close:hover {
+    color: #ff007a;
+}
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-family: 'CPMono', sans-serif;
+}
+
+
+button {
+    background-color: #ff007a;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff4d9e;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.deleteButton {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.deleteButton:hover {
+    background-color: #ff1a1a;
+}
+.errorMessage {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.errorText {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+.errorMessages {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: 1px solid #ff4d4d;
+    border-radius: 4px;
+}
+
+
+
+input:focus {
+    border-color: #00ccff;
+}
+
+.modal {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}

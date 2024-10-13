@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'CPMono';
+  src: url('/public/fonts/cpmono.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CPMono Bold';
+  src: url('/public/fonts/cpmono_bold.otf') format('opentype');
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

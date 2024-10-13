@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { registerUser } from '../services/authAPI'; 
+import './AuthForm.css';
 
 const Register = () => {
+    const [serverError, setServerError] = useState('');
     const navigate = useNavigate();
 
     const validationSchema = Yup.object({
@@ -16,40 +18,46 @@ const Register = () => {
     });
 
     return (
-        <Formik
-            initialValues={{ username: '', password: '', confirmPassword: '' }}
-            validationSchema={validationSchema}
-            onSubmit={(values, { setSubmitting }) => {
-                axios.post('http://localhost:8080/api/v1/auth/register', {
-                    username: values.username,
-                    password: values.password,
-                })
-                    .then(() => navigate('/login')) // Перенаправление на страницу логина после успешной регистрации
-                    .catch(error => console.error('Ошибка регистрации:', error))
-                    .finally(() => setSubmitting(false));
-            }}
-        >
-            {({ isSubmitting }) => (
-                <Form>
-                    <div>
-                        <label htmlFor="username">Имя пользователя</label>
-                        <Field type="text" name="username" />
-                        <ErrorMessage name="username" component="div" />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Пароль</label>
-                        <Field type="password" name="password" />
-                        <ErrorMessage name="password" component="div" />
-                    </div>
-                    <div>
-                        <label htmlFor="confirmPassword">Подтвердите пароль</label>
-                        <Field type="password" name="confirmPassword" />
-                        <ErrorMessage name="confirmPassword" component="div" />
-                    </div>
-                    <button type="submit" disabled={isSubmitting}>Зарегистрироваться</button>
-                </Form>
-            )}
-        </Formik>
+        <div className="auth-form">
+            <h2>Sign up</h2>
+            <Formik
+                initialValues={{ username: '', password: '', confirmPassword: '' }}
+                validationSchema={validationSchema}
+                onSubmit={async (values, { setSubmitting }) => {
+                    setServerError('');
+                    try {
+                        await registerUser(values.username, values.password); 
+                        navigate('/login'); 
+                    } catch (error) {
+                        setServerError(error.message); 
+                    } finally {
+                        setSubmitting(false);
+                    }
+                }}
+            >
+                {({ isSubmitting }) => (
+                    <Form>
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <Field type="text" name="username" />
+                            <ErrorMessage name="username" component="div" className="error-message" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <Field type="password" name="password" />
+                            <ErrorMessage name="password" component="div" className="error-message" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="confirmPassword">Confirm your password</label>
+                            <Field type="password" name="confirmPassword" />
+                            <ErrorMessage name="confirmPassword" component="div" className="error-message" />
+                        </div>
+                        {serverError && <div className="server-error">{serverError}</div>}
+                        <button type="submit" disabled={isSubmitting}>Sign up</button>
+                    </Form>
+                )}
+            </Formik>
+        </div>
     );
 };
 

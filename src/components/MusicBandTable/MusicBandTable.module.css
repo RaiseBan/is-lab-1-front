@@ -1,0 +1,94 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.table {
+    max-width: 90%; /* Ограничение ширины таблицы для уменьшения масштаба */
+    width: auto; /* Таблица не будет растягиваться на всю ширину экрана */
+    border-collapse: collapse;
+    background-color: #121212;
+    table-layout: auto;
+    margin: 0 auto; /* Центрирование таблицы */
+}
+
+.table th, .table td {
+    padding: 10px; /* Уменьшение padding для компактного вида */
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e0e0e0;
+    text-align: center;
+    font-size: 14px; /* Уменьшение размера шрифта */
+    font-family: 'CPMono', sans-serif;
+}
+
+.table th {
+    background-color: #292929;
+    color: #bfc4ca;
+    text-transform: uppercase;
+    font-size: 12px; /* Уменьшение шрифта заголовков */
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.table tr:hover {
+    background-color: #333333;
+}
+
+.noData {
+    text-align: center;
+    color: #ff4d9e;
+    padding: 20px;
+    font-size: 14px; /* Уменьшение текста в блоке "No Data" */
+    font-weight: bold;
+}
+
+.tableHeader {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px; /* Уменьшение заголовка */
+    color: #fff;
+}
+
+.filterInput {
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.paginationContainer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .table-container {
+        overflow-x: scroll;
+    }
+
+    .table {
+        max-width: 100%;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+        font-size: 12px; /* Уменьшение шрифта на маленьких экранах */
+    }
+
+    .tableHeader {
+        font-size: 20px; /* Меньший заголовок для мобильных устройств */
+    }
+}
+
+.currentUserRow {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.clickable {
+    cursor: pointer;
+}

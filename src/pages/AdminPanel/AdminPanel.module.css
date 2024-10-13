@@ -1,0 +1,44 @@
+.resultTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #ff4d9e;
+    font-family: 'CPMono', sans-serif;
+}
+
+.resultTable th, .resultTable td {
+    padding: 8px;
+    border: 1px solid #4d4d4d;
+    text-align: center;
+    position: relative;
+}
+
+.resultTable th {
+    background-color: #333333;
+    color: #bfc4ca;
+}
+
+.resultTable td {
+    background-color: #2d2d2d;
+}
+
+
+.approveButton {
+    display: none;
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+.resultTable tr:hover .approveButton {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    transform: translateY(-60%);
+}
