@@ -1,0 +1,103 @@
+.container {
+    background-color: #292929;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    width: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+
+.header {
+    font-size: 18px;
+    color: #bfc4ca;
+    margin-bottom: 15px;
+    font-family: 'CPMono', sans-serif;
+}
+
+.tableContainer {
+    margin-top: 20px;
+    width: 100%;
+    max-height: 300px; /* Ограничиваем высоту таблицы */
+    overflow-y: auto; /* Добавляем вертикальный скролл */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    border: 1px solid #4d4d4d;
+    border-radius: 5px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #bfc4ca;
+    font-family: 'CPMono', sans-serif;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    border: 1px solid #4d4d4d;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.table th {
+    background-color: #333333;
+    color: #bfc4ca;
+}
+
+.table td {
+    background-color: #2d2d2d;
+}
+
+.emptyMessage {
+    color: #ff4d9e;
+    font-size: 14px;
+    font-family: 'CPMono', sans-serif;
+    margin-top: 10px;
+}
+
+.fileUploadContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.fileInput {
+    width: 70%; /* Ширина поля ввода */
+    padding: 5px;
+    color: #bfc4ca;
+    background-color: #121212;
+    border: 1px solid #4d4d4d;
+    border-radius: 5px;
+    font-family: 'CPMono', sans-serif;
+}
+
+.uploadButton {
+    width: 25%;
+    padding: 5px;
+    background-color: #00d1b2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'CPMono', sans-serif;
+    margin-left: 10px; /* Отступ от поля */
+}
+
+.uploadButton:hover {
+    background-color: #00a89c;
+}
+
+.uploadStatus {
+    margin-top: 10px;
+    color: #ff4d9e;
+    font-size: 14px;
+    font-family: 'CPMono', sans-serif;
+}
